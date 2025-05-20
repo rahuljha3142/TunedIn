@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchSongs() {
     try {
-      const response = await fetch('http://localhost:5000/api/songs');
+      const response = await fetch('https://tunedin-b.onrender.com/api/songs');
       const songs = await response.json();
       songQueue = songs;
       originalSongs = songs;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formattedDuration = `${minutes}:${seconds.toString().padStart(2, '0')}`;
   
     songBar.innerHTML = `
-      <img class="song-cover" src="http://localhost:5000/telegram/thumbnail/${thumb_id}" alt="cover">
+      <img class="song-cover" src="https://tunedin-b.onrender.com/telegram/thumbnail/${thumb_id}" alt="cover">
       <div class="song-details">
         <div class="text-info">
           <h3 class="name">${title || 'Unknown Title'}</h3>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('songTitle').textContent = title || 'Unknown Title';
     document.getElementById('songArtist').textContent = performer || 'Unknown Artist';
-    document.getElementById('coverImage').src = `http://localhost:5000/telegram/thumbnail/${thumb_id}`;
+    document.getElementById('coverImage').src = `https://tunedin-b.onrender.com/telegram/thumbnail/${thumb_id}`;
     document.getElementById('coverImage').classList.add('playing');
     document.getElementById('equalizer').classList.add('playing');
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seconds = duration % 60;
     durationEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
-    globalAudio.src = `http://localhost:5000/telegram/audio/${file_id}`;
+    globalAudio.src = `https://tunedin-b.onrender.com/telegram/audio/${file_id}`;
     globalAudio.play();
     playPauseIcon.src = 'pause.png';
     playPauseIcon.alt = 'Pause';
