@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="./logo1.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TunedIn - Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+
+  <header>
+    <h1>TunedIn</h1>
+    <input type="text" id="searchBar" placeholder="Search songs by title..." />
+    <div class="dark-mode-toggle-wrapper">
+      <input type="checkbox" id="darkModeToggle"  />
+      <label for="darkModeToggle" class="slider">
+        <div class="icon day"></div>
+        <div class="icon night"></div>
+      </label>
+    </div>
+    
+  </header>
+
+  <main>
+    <div id="songList" class="song-list">
+      <!-- Songs will be injected here by script.js -->
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+      <!-- <button id="closePlayer" class="back-button" aria-label="Close Player">⟵</button> -->
+      <div class="cover-container">
+        <img id="coverImage" src="bg2.jpg" class="rotating-cover" alt="cover" />
+      </div>
+      <h2 id="songTitle">Falling Down</h2>
+      <p id="songArtist">Wild Cards</p>
+      
+      <div class="progress-container">
+        <span id="currentTime">00:00</span>
+        <input type="range" id="progressBar" value="0" max="100">
+        <span id="duration">00:00</span>
+      </div>
+      
+      <div class="volume-container">
+        <input type="range" class="progress-bar" id="volumeBar" value="1" min="0" max="1" step="0.01" />
+        <img id="volumeIcon" src="volume-on.png" alt="Volume" class="volume-icon" />
+      </div>
+      
+      
+      <div class="controls">
+        <button id="prevBtn">
+          <img src="previous.png" alt="Previous" class="control-icon" />
+        </button>
+        <button id="playPauseBtn">
+          <img src="play.png" alt="Play/Pause" class="control-icon" id="playPauseIcon" />
+        </button>
+        <button id="nextBtn">
+          <img src="next.png" alt="Next" class="control-icon" />
+        </button>
+      </div>
+      
+      
+      <!-- <img src="music-bars.gif" alt="playing gif" class="music-gif" /> -->
+      <div class="equalizer" id="equalizer">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      
+      
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
